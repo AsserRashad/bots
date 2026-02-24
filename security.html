@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Security - Nile 'n Chill</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #764ba2;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        p, li {
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .feature-box {
+            background: #e8eaf6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #764ba2;
+        }
+
+        .feature-box h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+
+        .price-alert {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #28a745;
+        }
+
+        .price-alert strong {
+            color: #155724;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .btn-support {
+            background-color: #f04747;
+            color: white;
+        }
+
+        .btn-support:hover {
+            background-color: #d84040;
+            transform: scale(1.02);
+        }
+
+        .btn-home {
+            background-color: #667eea;
+            color: white;
+        }
+
+        .btn-home:hover {
+            background-color: #5568d3;
+            transform: scale(1.02);
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 Server Security</h1>
+            <p>Complete Security & Protection Solutions</p>
+        </header>
+
+        <div class="content">
+            <h2>📋 About Server Security</h2>
+            <p>We provide <strong>comprehensive security</strong> for your Discord server. Our team can help you set up complete protection protocols to keep your community safe from threats, raids, and harmful users.</p>
+
+            <h2>✨ Security Services</h2>
+            <ul>
+                <li>✅ Raid protection setup</li>
+                <li>✅ Spam filtering configuration</li>
+                <li>✅ Bot security measures</li>
+                <li>✅ Auto-moderation setup</li>
+                <li>✅ Permission lockdown</li>
+                <li>✅ Member verification</li>
+                <li>✅ Backup & recovery systems</li>
+            </ul>
+
+            <h2>🎯 Security Features We Offer</h2>
+            <div class="feature-box">
+                <h4>🛡️ Threat Prevention</h4>
+                <ul>
+                    <li>Raid defense systems</li>
+                    <li>Bot activity monitoring</li>
+                    <li>Spam detection and blocking</li>
+                    <li>Malicious link detection</li>
+                    <li>Phishing prevention</li>
+                </ul>
+            </div>
+
+            <div class="feature-box">
+                <h4>🔒 Access Control</h4>
+                <ul>
+                    <li>Advanced permission setup</li>
+                    <li>Role-based security</li>
+                    <li>Member verification workflows</li>
+                    <li>Invite link tracking</li>
+                    <li>Two-factor authentication setup</li>
+                </ul>
+            </div>
+
+            <div class="feature-box">
+                <h4>📊 Monitoring & Analytics</h4>
+                <ul>
+                    <li>Real-time threat detection</li>
+                    <li>Activity logging</li>
+                    <li>Incident reporting</li>
+                    <li>Security audit trails</li>
+                    <li>Member behavior tracking</li>
+                </ul>
+            </div>
+
+            <div class="feature-box">
+                <h4>💾 Backup & Recovery</h4>
+                <ul>
+                    <li>Regular server backups</li>
+                    <li>Quick recovery options</li>
+                    <li>Data preservation</li>
+                    <li>Disaster prevention</li>
+                </ul>
+            </div>
+
+            <div class="feature-box">
+                <h4>✨ What Makes Us Special?</h4>
+                <ul>
+                    <li>🔒 24/7 Security Support</li>
+                    <li>⚡ Expert Team Security Review</li>
+                    <li>📢 Continuous Monitoring</li>
+                    <li>🛠️ Complete Customization</li>
+                    <li>📞 Rapid Response Team</li>
+                </ul>
+            </div>
+
+            <div class="price-alert">
+                <strong>💬 Custom Pricing Available</strong>
+                <p>Server security setups vary based on your server size and needs. Contact us on Discord for a security assessment and custom quote.</p>
+            </div>
+
+            <div class="buttons">
+                <a href="https://discord.gg/nnc" class="btn btn-support">💬 Request Security Setup</a>
+                <a href="index.html" class="btn btn-home">🏠 Back to Home</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Nile 'n Chill・<a href="https://discord.gg/nnc">Join Our Discord</a></p>
+        </footer>
+    </div>
+</body>
+</html>

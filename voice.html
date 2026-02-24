@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Bot - Nile 'n Chill</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #764ba2;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        p, li {
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .setup-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .setup-box h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .setup-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border-left: 3px solid #764ba2;
+        }
+
+        .setup-item strong {
+            color: #764ba2;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .feature-box {
+            background: #e8eaf6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #764ba2;
+        }
+
+        .feature-box h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+
+        .step {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+
+        .step strong {
+            color: #856404;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .btn-invite {
+            background-color: #43b581;
+            color: white;
+        }
+
+        .btn-invite:hover {
+            background-color: #3aa373;
+            transform: scale(1.02);
+        }
+
+        .btn-support {
+            background-color: #f04747;
+            color: white;
+        }
+
+        .btn-support:hover {
+            background-color: #d84040;
+            transform: scale(1.02);
+        }
+
+        .btn-home {
+            background-color: #667eea;
+            color: white;
+        }
+
+        .btn-home:hover {
+            background-color: #5568d3;
+            transform: scale(1.02);
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎙️ Voice Bot</h1>
+            <p>Create Temporary Voice Channels On Demand</p>
+        </header>
+
+        <div class="content">
+            <h2>📖 How to Setup?</h2>
+            <p>Setting up the Voice Bot is easy! Just use the </setup> command and fill in these two required settings:</p>
+
+            <div class="setup-box">
+                <h4>⚙️ Required Configuration</h4>
+                
+                <div class="setup-item">
+                    <strong>1. Creator Channel (Voice Channel)</strong>
+                    <p>Select a voice channel where users will join to create temporary voice rooms. When a user joins this channel, a temporary voice channel will be created for them.</p>
+                </div>
+
+                <div class="setup-item">
+                    <strong>2. Panel Channel (Text Channel)</strong>
+                    <p>Select a text channel where the control panel will be posted. <strong>Pro Tip:</strong> Restrict permissions so only the bot can send messages here to keep it clean and organized.</p>
+                </div>
+            </div>
+
+            <h2>🚀 How to Use?</h2>
+            <div class="step">
+                <strong>Step 1:</strong> A user joins the Creator Channel (configured in setup)
+            </div>
+            <div class="step">
+                <strong>Step 2:</strong> The bot automatically creates a temporary voice channel for that user
+            </div>
+            <div class="step">
+                <strong>Step 3:</strong> The user can manage their channel using the control panel in the Panel Channel
+            </div>
+            <div class="step">
+                <strong>Step 4:</strong> When all users leave the temporary channel, it automatically gets deleted
+            </div>
+
+            <p><strong>💡 Pro Tips:</strong></p>
+            <ul>
+                <li>Users can name and rename their temporary channels</li>
+                <li>Users can adjust privacy settings (bitrate, user limit, etc.)</li>
+                <li>Use the panel to manage all active temporary channels</li>
+                <li>Channels are cleaned up automatically when empty</li>
+            </ul>
+
+            <div class="feature-box">
+                <h4>✨ What Make us Special?</h4>
+                <ul>
+                    <li>🔒 24/7 Support</li>
+                    <li>🎁 Special Role for Bug Hunters with Rewards from Founder Asser</li>
+                    <li>📦 Many Bots Available for Free</li>
+                    <li>🎉 Giveaways for Special Bots</li>
+                    <li>⚡ Fast Delivery & 100% Working Payments</li>
+                    <li>📢 Continuous Updates & Announcements</li>
+                </ul>
+            </div>
+
+            <div class="buttons">
+                <a href="https://discord.com/oauth2/authorize?client_id=1474958398972891286&permissions=8&integration_type=0&scope=bot" class="btn btn-invite">➕ Add Voice Bot</a>
+                <a href="https://discord.gg/nnc" class="btn btn-support">💬 Get Support</a>
+                <a href="index.html" class="btn btn-home">🏠 Back to Home</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Nile 'n Chill・<a href="https://discord.gg/nnc">Join Our Discord</a></p>
+        </footer>
+    </div>
+</body>
+</html>

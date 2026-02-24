@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moderation Bot - Nile 'n Chill</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #764ba2;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        p, li {
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .command-list {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .command-list strong {
+            color: #667eea;
+        }
+
+        .feature-box {
+            background: #e8eaf6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #764ba2;
+        }
+
+        .feature-box h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .btn-invite {
+            background-color: #43b581;
+            color: white;
+        }
+
+        .btn-invite:hover {
+            background-color: #3aa373;
+            transform: scale(1.02);
+        }
+
+        .btn-support {
+            background-color: #f04747;
+            color: white;
+        }
+
+        .btn-support:hover {
+            background-color: #d84040;
+            transform: scale(1.02);
+        }
+
+        .btn-home {
+            background-color: #667eea;
+            color: white;
+        }
+
+        .btn-home:hover {
+            background-color: #5568d3;
+            transform: scale(1.02);
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛡️ Moderation Bot</h1>
+            <p>Complete Moderation System for Your Discord Server</p>
+        </header>
+
+        <div class="content">
+            <h2>📖 How to Setup?</h2>
+            <p>Follow these simple steps to get your moderation bot running:</p>
+
+            <h3>Step 1: Use the </setup> Command</h3>
+            <p>The setup command has multiple forms that you need to fill. Don't worry, it's straightforward!</p>
+
+            <h3>Required Settings:</h3>
+
+            <div class="command-list">
+                <h4>🟢 Level 1 - Basic Moderation</h4>
+                <p><strong>Permissions:</strong></p>
+                <ul>
+                    <li>/warn - Warn members</li>
+                    <li>/clear-warnings - Remove warnings</li>
+                    <li>/help - Get help</li>
+                </ul>
+            </div>
+
+            <div class="command-list">
+                <h4>🟠 Level 2 - Message Management</h4>
+                <p><strong>Permissions:</strong></p>
+                <ul>
+                    <li>/mute - Mute members</li>
+                    <li>/unmute - Unmute members</li>
+                    <li>/purge - Delete messages</li>
+                </ul>
+            </div>
+
+            <div class="command-list">
+                <h4>🟡 Level 3 - Advanced Moderation</h4>
+                <p><strong>Permissions:</strong></p>
+                <ul>
+                    <li>/verify - Verify members</li>
+                    <li>/kick - Kick members</li>
+                    <li>/role - Role management</li>
+                    <li>/role-add - Add roles</li>
+                    <li>/role-remove - Remove roles</li>
+                    <li>/role-add-multi - Add multiple roles</li>
+                    <li>/role-remove-multi - Remove multiple roles</li>
+                    <li>/nick - Change nicknames</li>
+                </ul>
+            </div>
+
+            <div class="command-list">
+                <h4>🔴 Level 4 - Server Security</h4>
+                <p><strong>Permissions:</strong></p>
+                <ul>
+                    <li>/ban - Ban members</li>
+                    <li>/unban - Unban members</li>
+                </ul>
+            </div>
+
+            <h3>Optional Settings:</h3>
+
+            <div class="command-list">
+                <ul>
+                    <li><strong>Level 1 Extra:</strong> Additional roles for Level 1 permissions</li>
+                    <li><strong>Level 2 Extra:</strong> Additional roles for Level 2 permissions</li>
+                    <li><strong>Level 3 Extra:</strong> Additional roles for Level 3 permissions</li>
+                    <li><strong>Level 4 Extra:</strong> Additional roles for Level 4 permissions</li>
+                    <li><strong>Verified & Unverified Roles:</strong> Required to use the /verify command</li>
+                </ul>
+            </div>
+
+            <h3>⚙️ Administrator Commands</h3>
+            <p>These commands can only be used by administrators:</p>
+            <ul>
+                <li>/verification-panel - Display verification panel <strong >🟡 Maintainance</strong></li>
+                <li>/setup - Configure the bot settings</li>
+            </ul>
+
+            <h2>🚀 How to Use?</h2>
+            <ul>
+                <li>Use the <strong>!</strong> prefix for all commands</li>
+                <li>Alternatively, use <strong>/</strong> for slash commands</li>
+                <li>If you purchased a custom bot, you can change the prefix to anything you want!</li>
+                <li>Commands will only work if your role matches the required permission level</li>
+            </ul>
+
+            <div class="feature-box">
+                <h4>✨ What Make us Special?</h4>
+                <ul>
+                    <li>🔒 24/7 Support</li>
+                    <li>🎁 Special Role for Bug Hunters with Rewards from Founder Asser</li>
+                    <li>📦 Many Bots Available for Free</li>
+                    <li>🎉 Giveaways for Special Bots</li>
+                    <li>⚡ Fast Delivery & 100% Working Payments</li>
+                    <li>📢 Continuous Updates & Announcements</li>
+                </ul>
+            </div>
+
+            <div class="buttons">
+                <a href="https://discord.com/oauth2/authorize?client_id=1468418037542813696&permissions=8&integration_type=0&scope=bot" class="btn btn-invite">➕ Add Moderation Bot</a>
+                <a href="https://discord.com/users/1475345513028128779" class="btn btn-support">💬 Get Support</a>
+                <a href="index.html" class="btn btn-home">🏠 Back to Home</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Nile 'n Chill・<a href="https://discord.gg/nnc">Join Our Discord</a></p>
+        </footer>
+    </div>
+</body>
+</html>
